@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+}
+header {
+  width: 100%;
+  background-color: hsl(180, 29%, 50%);
+  height: 125px;
+}
+.header-img {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  background-color: hsl(180, 52%, 96%);
+  padding: 0 100px 50px;
+}
+@media (max-width: 991px) {
+  main {
+    padding: 0 50px 25px;
+  }
+}
+.filter {
+  position: relative;
+  min-height: 60px;
+  top: -30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: 1px 10px 16px 0px hsl(180deg 39% 56% / 20%);
+  transition: 0.3s;
+  opacity: 0;
+}
+.filter .keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.filter .keywords .keyword {
+  background-color: hsl(176deg 56% 95%);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+.filter .keywords .keyword span {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 6px 10px;
+  color: hsl(180, 29%, 50%);
+}
+.filter .keywords .remove {
+  height: 100%;
+  width: 29px;
+  color: white;
+  background-color: #5ba4a4;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.filter .keywords .remove:hover {
+  background-color: #293938;
+}
+.filter .keywords .remove i {
+  pointer-events: none;
+}
+.filter .clear {
+  background: transparent;
+  border: none;
+  color: hsl(180, 29%, 50%);
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+  width: 80px;
+  text-align: right;
+}
+.filter .clear:hover {
+  text-decoration: underline;
+}
+.job {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px 35px;
+  position: relative;
+  box-shadow: rgb(99 187 187 / 20%) 1px 10px 16px 0px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+@media (max-width: 1024px) {
+  .job {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .job {
+    padding: 50px 20px 20px;
+    margin-bottom: 50px;
+  }
+}
+.job::before,
+.job::after {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 4px;
+  background-color: #5ba4a4;
+  left: 0;
+  top: 50%;
+  transition: 0.5s;
+}
+.job:hover::before,
+.job:hover::after {
+  height: 50%;
+}
+.job:hover::before {
+  border-bottom-left-radius: 8px;
+}
+.job:hover::after {
+  top: 0;
+  border-top-left-radius: 8px;
+}
+.job .left {
+  display: flex;
+  align-items: center;
+  flex-basis: 60%;
+  position: relative;
+}
+
+.job .left .logo {
+  margin-right: 25px;
+}
+@media (max-width: 767px) {
+  .job .left .logo {
+    position: absolute;
+    width: 60px;
+    top: -75px;
+    margin: 0;
+  }
+}
+.job .left .info .company {
+  font-size: 18px;
+  font-weight: 700;
+  color: #5ba4a4;
+  margin-bottom: 10px;
+}
+.job .left .info .company .new {
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  background-color: #5ba4a4;
+  padding: 5px 8px;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+.job .left .info .company .featured {
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  background-color: #293938;
+  padding: 5px 8px;
+  border-radius: 15px;
+  margin-left: 5px;
+}
+.job .left .info .position {
+  color: #293938;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+.job .left .info .position:hover {
+  color: #5ba4a4;
+}
+.job .left .info .details {
+  display: flex;
+  gap: 48px;
+}
+@media (max-width: 479px) {
+  .job .left .info .details {
+    gap: 20px;
+  }
+}
+.job .left .info .details span {
+  font-size: 16px;
+  color: hsl(180, 8%, 52%);
+  position: relative;
+}
+.job .left .info .details span:not(:first-child):before {
+  content: ".";
+  position: absolute;
+  left: -28px;
+  top: -4px;
+  font-size: 20px;
+}
+@media (max-width: 479px) {
+  .job .left .info .details span::before {
+    display: none;
+  }
+}
+.job .right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+}
+@media (max-width: 1024px) {
+  .job .right {
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding-top: 25px;
+  }
+}
+.job .right span {
+  background-color: hsl(176deg 56% 95%);
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 7px 10px 6px;
+  color: hsl(180, 29%, 50%);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.job .right span:hover {
+  color: hsl(176deg 56% 95%);
+  background-color: hsl(180, 29%, 50%);
+}
